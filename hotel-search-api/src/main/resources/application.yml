@@ -1,5 +1,5 @@
 server:
-  port: 9090
+  port: 9901
   servlet:
     context-path: "/hotel-search-service"
 
@@ -21,3 +21,16 @@ management:
       exposure:
         include: "*"
       base-path: /monitoring
+
+supplier:
+  endPoint:
+    requestorId: "traveldoo_test"
+    credential: "C2A43182"
+    url: "https://traveldoo.koedia.com"
+
+grpc:
+  client:
+    grpc-hotelAvailable-servic:
+      address: static://localhost:9901
+      negotiationType: plaintext
+
