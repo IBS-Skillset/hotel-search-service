@@ -31,6 +31,6 @@ supplier:
 grpc:
   client:
     grpc-hotelAvailable-servic:
-      address: static://localhost:9901
+      address: static://localhost:9001
       negotiationType: plaintext
 
