@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class HotelAvailableService {
 
-    @GrpcClient("grpc-hotelAvailable-service")
+    @GrpcClient("getHotelItem")
     HotelServiceGrpc.HotelServiceBlockingStub hotelServiceBlockingStub;
 
     private final Logger logger = LoggerFactory.getLogger(HotelAvailableService.class);
