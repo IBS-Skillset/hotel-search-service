@@ -24,13 +24,13 @@ management:
 
 supplier:
   endPoint:
-    requestorId: "traveldoo_test"
-    credential: "C2A43182"
+    requestorId: "DJANTLmP90QE"
+    credential: "aWVhLc6g"
     url: "https://traveldoo.koedia.com"
 
 grpc:
   client:
-    grpc-hotelAvailable-servic:
+    getHotelItem:
       address: static://localhost:9001
       negotiationType: plaintext
 

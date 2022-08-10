@@ -6,7 +6,7 @@ public final class APIConstants {
 
     public static final String MEDIATYPE_JSON = "application/json";
 
-    public static final String LANGUAGE_CODE = "EN";
+    public static final String LANGUAGE_CODE = "FRE";
 
     public static final String COUNTRY_CODE = "IN";
 
