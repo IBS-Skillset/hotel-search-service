@@ -12,12 +12,10 @@ import static com.hotel.service.util.ProtoBufUtil.safeSetProtoField;
 public class AvailabilityRequestBuilder {
 
     private final RequestContextMapper requestContextMapper;
-    private final DateMapper dateMapper;
 
 
-    public AvailabilityRequestBuilder(RequestContextMapper requestContextMapper, DateMapper dateMapper) {
+    public AvailabilityRequestBuilder(RequestContextMapper requestContextMapper) {
         this.requestContextMapper = requestContextMapper;
-        this.dateMapper = dateMapper;
     }
 
     public HotelAvailabilityRequest map(HotelAvailableRequest hotelAvailableRequest) {
@@ -25,8 +23,8 @@ public class AvailabilityRequestBuilder {
         safeSetProtoField(getHotelAvailabilityBuilder::setRequestContext, requestContextMapper.map());
         safeSetProtoField(getHotelAvailabilityBuilder::setLatitude, hotelAvailableRequest.getLatitude());
         safeSetProtoField(getHotelAvailabilityBuilder::setLongitude, hotelAvailableRequest.getLongitude());
-        safeSetProtoField(getHotelAvailabilityBuilder::setStartDate, dateMapper.map(hotelAvailableRequest.getCheckInDate()));
-        safeSetProtoField(getHotelAvailabilityBuilder::setEndDate, dateMapper.map(hotelAvailableRequest.getCheckOutDate()));
+        safeSetProtoField(getHotelAvailabilityBuilder::setStartDate, hotelAvailableRequest.getCheckInDate());
+        safeSetProtoField(getHotelAvailabilityBuilder::setEndDate, hotelAvailableRequest.getCheckOutDate());
         safeSetProtoField(getHotelAvailabilityBuilder::setLanguageCode, APIConstants.LANGUAGE_CODE);
         safeSetProtoField(getHotelAvailabilityBuilder::setCountryCode, APIConstants.COUNTRY_CODE);
         safeSetProtoField(getHotelAvailabilityBuilder::setOccupancy, APIConstants.OCCUPANCY);
