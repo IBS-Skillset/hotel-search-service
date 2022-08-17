@@ -23,8 +23,8 @@ public class AvailabilityRequestBuilder {
         safeSetProtoField(getHotelAvailabilityBuilder::setRequestContext, requestContextMapper.map());
         safeSetProtoField(getHotelAvailabilityBuilder::setLatitude, hotelAvailableRequest.getLatitude());
         safeSetProtoField(getHotelAvailabilityBuilder::setLongitude, hotelAvailableRequest.getLongitude());
-        safeSetProtoField(getHotelAvailabilityBuilder::setStartDate, hotelAvailableRequest.getCheckInDate());
-        safeSetProtoField(getHotelAvailabilityBuilder::setEndDate, hotelAvailableRequest.getCheckOutDate());
+        safeSetProtoField(getHotelAvailabilityBuilder::setStartDate, mapDate(hotelAvailableRequest.getCheckInDate()));
+        safeSetProtoField(getHotelAvailabilityBuilder::setEndDate, mapDate(hotelAvailableRequest.getCheckOutDate()));
         safeSetProtoField(getHotelAvailabilityBuilder::setLanguageCode, APIConstants.LANGUAGE_CODE);
         safeSetProtoField(getHotelAvailabilityBuilder::setCountryCode, APIConstants.COUNTRY_CODE);
         safeSetProtoField(getHotelAvailabilityBuilder::setOccupancy, APIConstants.OCCUPANCY);
@@ -33,5 +33,11 @@ public class AvailabilityRequestBuilder {
         return getHotelAvailabilityBuilder.build();
 
 
+    }
+
+      public String mapDate(String dateString){
+        return dateString.substring(0,4) + '-' +
+                dateString.substring(4,6) + '-' +
+                    dateString.substring(6,8);
     }
 }
