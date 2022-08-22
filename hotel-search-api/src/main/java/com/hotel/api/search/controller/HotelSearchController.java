@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/api", consumes = APIConstants.MEDIATYPE_JSON, produces = APIConstants.MEDIATYPE_PROTOBUF)
+@RequestMapping(value = "/api", consumes = APIConstants.MEDIATYPE_JSON)
 public class HotelSearchController {
 
     private final HotelAvailableService hotelAvailableService;
@@ -21,7 +21,7 @@ public class HotelSearchController {
     }
 
     @PostMapping(value = "/availability")
-    public HotelAvailabilityResponse getAvailableResponse(@RequestBody HotelAvailableRequest request) {
+    public String getAvailableResponse(@RequestBody HotelAvailableRequest request) {
         return hotelAvailableService.service(request);
 
     }
