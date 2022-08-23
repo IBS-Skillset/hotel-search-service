@@ -2,8 +2,8 @@ package com.hotel.api.search.mappers.availability.request;
 
 import com.hotel.api.search.model.HotelAvailableRequest;
 import com.hotel.api.search.util.APIConstants;
-import com.hotel.api.search.util.APIUtils;
 import com.hotel.service.availability.HotelAvailabilityRequest;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import static com.hotel.service.util.ProtoBufUtil.safeSetProtoField;
@@ -11,12 +11,8 @@ import static com.hotel.service.util.ProtoBufUtil.safeSetProtoField;
 @Component
 public class AvailabilityRequestBuilder {
 
-    private final RequestContextMapper requestContextMapper;
-
-
-    public AvailabilityRequestBuilder(RequestContextMapper requestContextMapper) {
-        this.requestContextMapper = requestContextMapper;
-    }
+    @Autowired
+    private RequestContextMapper requestContextMapper;
 
     public HotelAvailabilityRequest map(HotelAvailableRequest hotelAvailableRequest) {
         HotelAvailabilityRequest.Builder getHotelAvailabilityBuilder = HotelAvailabilityRequest.newBuilder();
@@ -32,12 +28,11 @@ public class AvailabilityRequestBuilder {
         safeSetProtoField(getHotelAvailabilityBuilder::setRoomCount, APIConstants.ROOM_COUNT);
         return getHotelAvailabilityBuilder.build();
 
-
     }
 
-      public String mapDate(String dateString){
-        return dateString.substring(0,4) + '-' +
-                dateString.substring(4,6) + '-' +
-                    dateString.substring(6,8);
+    public String mapDate(String dateString) {
+        return dateString.substring(0, 4) + '-' +
+                dateString.substring(4, 6) + '-' +
+                dateString.substring(6, 8);
     }
 }
