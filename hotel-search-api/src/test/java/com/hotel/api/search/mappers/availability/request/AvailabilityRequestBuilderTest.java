@@ -5,7 +5,6 @@ import com.hotel.service.availability.HotelAvailabilityRequest;
 import com.hotel.service.common.Context;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -16,10 +15,12 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class AvailabilityRequestBuilderTest {
 
-    @InjectMocks
-    private AvailabilityRequestBuilder availabilityRequestBuilder;
     @Mock
     private RequestContextMapper requestContextMapper;
+
+    @InjectMocks
+    private AvailabilityRequestBuilder availabilityRequestBuilder;
+
 
     @Test
     public void map() {

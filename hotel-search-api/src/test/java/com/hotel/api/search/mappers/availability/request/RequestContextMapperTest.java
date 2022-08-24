@@ -22,5 +22,6 @@ public class RequestContextMapperTest {
         assertThat(context.getSupplierUrl()).isEqualTo("https://traveldoo.koedia.com");
         assertThat(context.getSupplierRequestorId()).isEqualTo("DJANTLmP90QE");
         assertThat(context.getSupplierCredential()).isEqualTo("aWVhLc6g");
+
     }
 }
