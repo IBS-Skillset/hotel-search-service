@@ -5,6 +5,7 @@ import com.hotel.api.search.model.HotelAvailableRequest;
 import com.hotel.api.search.service.HotelAvailableService;
 import com.hotel.api.search.util.APIConstants;
 import com.hotel.service.availability.HotelAvailabilityResponse;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,7 @@ public class HotelSearchController {
     }
 
     @PostMapping(value = "/availability")
+    @LoadBalanced
     public String getAvailableResponse(@RequestBody HotelAvailableRequest request) {
         return hotelAvailableService.service(request);
 
