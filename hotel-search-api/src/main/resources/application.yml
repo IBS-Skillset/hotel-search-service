@@ -1,5 +1,5 @@
 server:
-  port: 9901
+  port: 8085
   servlet:
     context-path: "/hotel-search-service"
 
@@ -10,7 +10,7 @@ info:
 
 spring:
   application:
-    name: '@project.name@'
+    name: HOTEL-SEARCH-API
 
 management:
   info:
@@ -30,7 +30,20 @@ supplier:
 
 grpc:
   client:
-    getHotelItem:
-      address: static://localhost:9001
+    hotel-availibility-pad:
+      address: 'discovery:///hotel-availibility-pad'
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true
       negotiationType: plaintext
 
+eureka:
+  instance:
+    prefer-ip-address: true
+    status-page-url-path: /actuator/info
+    health-check-url-path: /actuator/health
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://192.168.1.100:8761/eureka/
