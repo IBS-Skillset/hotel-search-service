@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class HotelAvailableService {
 
-    @GrpcClient("getHotelItem")
+    @GrpcClient("hotel-availibility-pad")
     HotelServiceGrpc.HotelServiceBlockingStub hotelServiceBlockingStub;
 
     @Autowired
