@@ -1,4 +1,4 @@
-package com.hotel.api.search.mappers.availability.request;
+package com.hotel.api.search.mappers.common;
 
 import com.hotel.service.common.Context;
 import org.springframework.beans.factory.annotation.Value;

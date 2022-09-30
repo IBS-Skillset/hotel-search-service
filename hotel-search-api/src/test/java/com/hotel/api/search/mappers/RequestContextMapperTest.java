@@ -1,5 +1,6 @@
-package com.hotel.api.search.mappers.availability.request;
+package com.hotel.api.search.mappers;
 
+import com.hotel.api.search.mappers.common.RequestContextMapper;
 import com.hotel.service.common.Context;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

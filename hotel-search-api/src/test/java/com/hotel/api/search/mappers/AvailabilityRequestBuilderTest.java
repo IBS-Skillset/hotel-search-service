@@ -1,5 +1,7 @@
-package com.hotel.api.search.mappers.availability.request;
+package com.hotel.api.search.mappers;
 
+import com.hotel.api.search.mappers.availability.AvailabilityRequestBuilder;
+import com.hotel.api.search.mappers.common.RequestContextMapper;
 import com.hotel.api.search.model.HotelAvailableRequest;
 import com.hotel.service.availability.HotelAvailabilityRequest;
 import com.hotel.service.common.Context;

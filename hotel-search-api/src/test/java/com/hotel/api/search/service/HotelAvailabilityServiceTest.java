@@ -1,6 +1,6 @@
 package com.hotel.api.search.service;
 
-import com.hotel.api.search.mappers.availability.request.AvailabilityRequestBuilder;
+import com.hotel.api.search.mappers.availability.AvailabilityRequestBuilder;
 import com.hotel.api.search.model.HotelAvailableRequest;
 import com.hotel.service.availability.HotelAvailabilityRequest;
 import com.hotel.service.availability.HotelServiceGrpc;
@@ -15,7 +15,7 @@ import static org.mockito.Mockito.any;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
-public class HotelAvailableServiceTest {
+public class HotelAvailabilityServiceTest {
 
     @Mock
     private HotelServiceGrpc.HotelServiceBlockingStub blockingStub;
@@ -24,7 +24,7 @@ public class HotelAvailableServiceTest {
     private AvailabilityRequestBuilder availabilityRequestBuilder;
 
     @InjectMocks
-    private HotelAvailableService hotelAvailableService;
+    private HotelAvailabilityService hotelAvailableService;
 
 
     @Test

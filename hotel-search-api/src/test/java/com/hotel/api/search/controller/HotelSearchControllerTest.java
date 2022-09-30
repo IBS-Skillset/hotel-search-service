@@ -3,7 +3,7 @@ package com.hotel.api.search.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hotel.api.search.HotelSearchApiApplication;
 import com.hotel.api.search.model.HotelAvailableRequest;
-import com.hotel.api.search.service.HotelAvailableService;
+import com.hotel.api.search.service.HotelAvailabilityService;
 import com.hotel.api.search.util.APIConstants;
 import com.hotel.service.availability.HotelAvailabilityResponse;
 import org.junit.Test;
@@ -30,7 +30,7 @@ public class HotelSearchControllerTest {
     private MockMvc mockMvc;
 
     @MockBean
-    private HotelAvailableService hotelAvailableService;
+    private HotelAvailabilityService hotelAvailableService;
 
     @Test
     public void getAvailableResponseTest() throws Exception {

@@ -3,7 +3,7 @@ package com.hotel.api.search.service;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.hotel.api.search.adapter.HotelAvailabilityResponseAdapter;
-import com.hotel.api.search.mappers.availability.request.AvailabilityRequestBuilder;
+import com.hotel.api.search.mappers.availability.AvailabilityRequestBuilder;
 import com.hotel.api.search.model.HotelAvailableRequest;
 import com.hotel.service.availability.HotelAvailabilityRequest;
 import com.hotel.service.availability.HotelAvailabilityResponse;
@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
-public class HotelAvailableService {
+public class HotelAvailabilityService {
 
     @GrpcClient("hotel-availibility-pad")
     HotelServiceGrpc.HotelServiceBlockingStub hotelServiceBlockingStub;
