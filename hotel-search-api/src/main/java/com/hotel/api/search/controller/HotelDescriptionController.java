@@ -1,8 +1,7 @@
 package com.hotel.api.search.controller;
 
-
-import com.hotel.api.search.model.HotelAvailableRequest;
-import com.hotel.api.search.service.HotelAvailabilityService;
+import com.hotel.api.search.model.DescriptionRequest;
+import com.hotel.api.search.service.HotelDescriptionService;
 import com.hotel.api.search.util.APIConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,14 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/api", consumes = APIConstants.MEDIATYPE_JSON)
-public class HotelSearchController {
+public class HotelDescriptionController {
 
     @Autowired
-    private HotelAvailabilityService hotelAvailableService;
+    private HotelDescriptionService hotelDescriptionService;
 
-    @PostMapping(value = "/availability")
-    public String getAvailableResponse(@RequestBody HotelAvailableRequest request) {
-        return hotelAvailableService.service(request);
-
+    @PostMapping(value = "/description")
+    public String getDescriptionResponse(@RequestBody DescriptionRequest request) {
+        return hotelDescriptionService.service(request);
     }
 }

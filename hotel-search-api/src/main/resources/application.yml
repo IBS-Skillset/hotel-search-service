@@ -35,6 +35,11 @@ grpc:
       enableKeepAlive: true
       keepAliveWithoutCalls: true
       negotiationType: plaintext
+    hotel-details-pad:
+      address: 'discovery:///hotel-details-pad'
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true
+      negotiationType: plaintext
 
 eureka:
   instance:
