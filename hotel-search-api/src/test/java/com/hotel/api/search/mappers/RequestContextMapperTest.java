@@ -1,6 +1,7 @@
 package com.hotel.api.search.mappers;
 
 import com.hotel.api.search.mappers.common.RequestContextMapper;
+import com.hotel.api.search.model.SupplierCredential;
 import com.hotel.service.common.Context;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,7 +14,10 @@ public class RequestContextMapperTest {
 
     @BeforeEach
     public void setUp() {
-        requestContextMapper = new RequestContextMapper("https://traveldoo.koedia.com", "DJANTLmP90QE", "aWVhLc6g");
+        SupplierCredential supplierCredential = new SupplierCredential();
+        supplierCredential.setRequestorId("DJANTLmP90QE");
+        supplierCredential.setPassword("aWVhLc6g");
+        requestContextMapper = new RequestContextMapper("https://traveldoo.koedia.com",supplierCredential);
     }
 
     @Test
