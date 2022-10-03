@@ -24,8 +24,6 @@ management:
 
 supplier:
   endPoint:
-    requestorId: "DJANTLmP90QE"
-    credential: "aWVhLc6g"
     url: "https://traveldoo.koedia.com"
 
 grpc:
