@@ -1,6 +1,11 @@
 package com.hotel.api.search.model;
 
-import lombok.*;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+import lombok.Builder;
 
 @Data
 @AllArgsConstructor
