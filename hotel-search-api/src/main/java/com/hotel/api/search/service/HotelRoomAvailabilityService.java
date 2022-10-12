@@ -27,7 +27,7 @@ public class HotelRoomAvailabilityService {
         log.info(request.toString());
         RoomAvailabilityRequest roomAvailabilityRequest=requestBuilder.map(request);
         log.info("Invoking grpc service for hotel Room Availability request " + roomAvailabilityRequest.toString());
-        RoomAvailabilityResponse response=hotelRoomAvailabilityServiceBlockingStub.getRoomAvailability(roomAvailabilityRequest);
+        RoomAvailabilityResponse response = hotelRoomAvailabilityServiceBlockingStub.getRoomAvailability(roomAvailabilityRequest);
         GsonBuilder gsonBuilder = new GsonBuilder();
         Gson gson = gsonBuilder.registerTypeAdapter(RoomAvailabilityResponse.class, new HotelRoomAvailabilityResponseAdapter()).create();
         String jsonResponse = gson.toJson(response);
