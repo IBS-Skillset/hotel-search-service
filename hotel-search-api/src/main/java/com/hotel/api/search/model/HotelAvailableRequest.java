@@ -14,4 +14,9 @@ public class HotelAvailableRequest {
     private double longitude;
     private String checkInDate;
     private String checkOutDate;
+    private String languageCode;
+    private String countryCode;
+    private int occupancy;
+    private int roomCount;
+
 }

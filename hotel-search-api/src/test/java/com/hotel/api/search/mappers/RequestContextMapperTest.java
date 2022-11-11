@@ -15,8 +15,8 @@ public class RequestContextMapperTest {
     @BeforeEach
     public void setUp() {
         SupplierCredential supplierCredential = new SupplierCredential();
-        supplierCredential.setRequestorId("DJANTLmP90QE");
-        supplierCredential.setPassword("aWVhLc6g");
+        supplierCredential.setRequestorId("XXXXXX");
+        supplierCredential.setPassword("XXXXXX");
         requestContextMapper = new RequestContextMapper("https://traveldoo.koedia.com",supplierCredential);
     }
 
@@ -25,8 +25,8 @@ public class RequestContextMapperTest {
         Context context = requestContextMapper.map();
         assertThat(context).isNotNull();
         assertThat(context.getSupplierUrl()).isEqualTo("https://traveldoo.koedia.com");
-        assertThat(context.getSupplierRequestorId()).isEqualTo("DJANTLmP90QE");
-        assertThat(context.getSupplierCredential()).isEqualTo("aWVhLc6g");
+        assertThat(context.getSupplierRequestorId()).isEqualTo("XXXXXX");
+        assertThat(context.getSupplierCredential()).isEqualTo("XXXXXX");
 
     }
 }
