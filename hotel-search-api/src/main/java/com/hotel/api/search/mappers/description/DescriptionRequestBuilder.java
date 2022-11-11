@@ -10,10 +10,6 @@ import static com.hotel.service.util.ProtoBufUtil.safeSetProtoField;
 
 @Component
 public class DescriptionRequestBuilder {
-
-    @Autowired
-    private RequestContextMapper contextMapper;
-
     @Autowired
     private RequestContextMapper requestContextMapper;
 

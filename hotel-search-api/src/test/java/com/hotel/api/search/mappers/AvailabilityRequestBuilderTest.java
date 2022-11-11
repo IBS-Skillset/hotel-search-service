@@ -21,7 +21,7 @@ public class AvailabilityRequestBuilderTest {
     private RequestContextMapper requestContextMapper;
 
     @InjectMocks
-    private AvailabilityRequestBuilder availabilityRequestBuilder;
+    private AvailabilityRequestBuilder availabilityRequestBuilder = new AvailabilityRequestBuilder(3);
 
 
     @Test

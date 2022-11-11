@@ -25,6 +25,7 @@ management:
 supplier:
   endPoint:
     url: "https://traveldoo.koedia.com"
+  radius: 3
 
 grpc:
   client:
