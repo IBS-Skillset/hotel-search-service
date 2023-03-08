@@ -110,7 +110,13 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
+    <repositories>
+        <repository>
+            <id>ibsplc-hotel-service-contract</id>
+            <name>ibsplc-hotel-service-contract</name>
+            <url>https://ibsplc-306472407007.d.codeartifact.ap-south-1.amazonaws.com/maven/hotel-service-contract/</url>
+        </repository>
+    </repositories>
     <build>
         <finalName>hotel-search-api</finalName>
         <plugins>
