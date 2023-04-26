@@ -26,6 +26,8 @@ supplier:
   endPoint:
     url: "https://traveldoo.koedia.com"
   radius: 3
+  requestorId: "traveldoo_test"
+  password: "C2A43182"
 
 grpc:
   client:
