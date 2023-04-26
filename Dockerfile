@@ -7,4 +7,3 @@ COPY hotel-search-api/target/hotel-search-api.jar /opt/app/hotel-search-api.jar
 ENTRYPOINT ["/usr/bin/java"]
 CMD ["-Dorg.apache.catalina.STRICT_SERVLET_COMPLIANCE=true", "-jar", "/opt/app/hotel-search-api.jar"]
 
-EXPOSE 8080
