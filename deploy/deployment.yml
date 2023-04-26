@@ -1,0 +1,45 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hotel-search-api
+  namespace: beta-app
+  labels:
+    app.kubernetes.io/name: hotel-search-api
+spec:
+  replicas: 1
+  minReadySeconds: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: hotel-search-api
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: hotel-search-api
+    spec:
+      containers:
+        - name: hotel-search-api
+          image: 306472407007.dkr.ecr.ap-south-1.amazonaws.com/ibs-skillset-happystays/hotel-search-service:71983d1
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8085
+          resources:
+            requests:
+              memory: "250Mi"
+              cpu: "200m"
+            limits:
+              memory: "500Mi"
+              cpu: "500m"
+          env:
+            - name: HOST-AUTH
+              value: authorization-server
+            - name: HOST_CONFIG
+              value: config-server
+            - name: HOST_REGISTRY
+              value: service-registry
