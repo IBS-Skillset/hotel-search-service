@@ -13,6 +13,7 @@ public class ResourceServerConfig {
     @Value("#{systemEnvironment['HOST-AUTH'] ?: 'localhost'}")
     private String authServer;
 
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http.oauth2ResourceServer(
