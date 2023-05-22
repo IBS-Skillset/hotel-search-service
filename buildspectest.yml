@@ -40,7 +40,7 @@ phases:
           git config --global user.name $SECRET_USERNAME
           git checkout -B build
           git fetch --all
-          git reset --hard neworigin/main
+          git reset --hard neworigin/build
           printf "\nhotel-search-service" >> commitList.txt
           git add commitList.txt
           git commit -m "Adding hotel-search-service PR to commitlist ${CODEBUILD_WEBHOOK_TRIGGER}"
