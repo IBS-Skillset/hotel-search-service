@@ -2,10 +2,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hotel-search-api
+  name: hotel-search-service
   namespace: beta-app
   labels:
-    app.kubernetes.io/name: hotel-search-api
+    app.kubernetes.io/name: hotel-search-service
 spec:
   replicas: 1
   minReadySeconds: 5
@@ -16,14 +16,14 @@ spec:
       maxUnavailable: 1
   selector:
     matchLabels:
-      app.kubernetes.io/name: hotel-search-api
+      app.kubernetes.io/name: hotel-search-service
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: hotel-search-api
+        app.kubernetes.io/name: hotel-search-service
     spec:
       containers:
-        - name: hotel-search-api
+        - name: hotel-search-service-api
           image: 306472407007.dkr.ecr.ap-south-1.amazonaws.com/ibs-skillset-happystays/hotel-search-service:8812543
           imagePullPolicy: Always
           ports:

@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hotel-search-api
+  name: hotel-search-service
   namespace: beta-app
 spec:
   type: ClusterIP
@@ -10,4 +10,4 @@ spec:
     - port: 8085
       targetPort: 8085
   selector:
-    app.kubernetes.io/name: hotel-search-api
+    app.kubernetes.io/name: hotel-search-service

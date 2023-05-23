@@ -118,7 +118,7 @@
         </repository>
     </repositories>
     <build>
-        <finalName>hotel-search-api</finalName>
+        <finalName>hotel-search-service</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
